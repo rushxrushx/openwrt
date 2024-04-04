@@ -88,6 +88,12 @@ $(call Package/e2fsprogs)
   DEPENDS:= +e2fsprogs
 endef
 
+define Package/e4defrag
+$(call Package/e2fsprogs)
+  TITLE:=Ext4 Filesystem defrag utility
+  DEPENDS:= +e2fsprogs
+endef
+
 define Package/resize2fs
 $(call Package/e2fsprogs)
   TITLE:=Ext2 Filesystem resize utility
@@ -315,6 +321,11 @@ define Package/lsattr/install
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/lsattr $(1)/usr/bin/
 endef
 
+define Package/e4defrag/install
+	$(INSTALL_DIR) $(1)/usr/sbin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/e4defrag $(1)/usr/sbin/
+endef
+
 $(eval $(call BuildPackage,e2fsprogs))
 $(eval $(call BuildPackage,libcomerr))
 $(eval $(call BuildPackage,libss))
@@ -329,4 +340,5 @@ $(eval $(call BuildPackage,filefrag))
 $(eval $(call BuildPackage,debugfs))
 $(eval $(call BuildPackage,chattr))
 $(eval $(call BuildPackage,lsattr))
+$(eval $(call BuildPackage,e4defrag))
 $(eval $(call HostBuild))

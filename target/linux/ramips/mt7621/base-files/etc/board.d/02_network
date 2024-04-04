@@ -27,6 +27,7 @@ ramips_setup_interfaces()
 	unielec,u7621-06-16m|\
 	unielec,u7621-06-64m|\
 	xiaoyu,xy-c5|\
+	zte,e8820v2|\
 	xzwifi,creativebox-v1|\
 	youku,yk-l2|\
 	zbtlink,zbt-we1326|\
@@ -123,6 +124,7 @@ ramips_setup_interfaces()
 		ucidef_add_switch_attr "switch0" "enable" "false"
 		ucidef_set_interface_lan "eth0"
 		;;
+	jdcloud,re-sp-01b|\
 	mikrotik,rbm33g)
 		ucidef_add_switch "switch0" \
 			"1:lan" "2:lan" "0:wan" "6@eth0"

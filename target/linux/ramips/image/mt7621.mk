@@ -307,7 +307,7 @@ define Device/gehua_ghl-r-001
   DEVICE_VENDOR := GeHua
   DEVICE_MODEL := GHL-R-001
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 \
-	kmod-usb-ledtrig-usbport wpad-basic
+	wpad-basic
   DEFAULT := n
 endef
 TARGET_DEVICES += gehua_ghl-r-001
@@ -437,6 +437,15 @@ define Device/jcg_jhr-ac876m
   DEVICE_PACKAGES := kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
 endef
 TARGET_DEVICES += jcg_jhr-ac876m
+
+define Device/jdcloud_re-sp-01b
+  DTS := mt7621_jdcloud_re-sp-01b
+  IMAGE_SIZE := 27328k
+  DEVICE_TITLE := JDCloud RE-SP-01B
+  DEVICE_PACKAGES := kmod-fs-ext4 kmod-mt7603 kmod-mt7615e kmod-sdhci-mt7620 \
+	kmod-usb3 wpad-basic
+endef
+TARGET_DEVICES += jdcloud_re-sp-01b
 
 define Device/lenovo_newifi-d1
   IMAGE_SIZE := 32448k
@@ -983,3 +992,13 @@ define Device/zio_freezio
 	kmod-usb-ledtrig-usbport wpad-basic
 endef
 TARGET_DEVICES += zio_freezio
+
+define Device/zte_e8820v2
+	MTK_SOC := mt7621
+	IMAGE_SIZE := 16064k
+	DEVICE_VENDOR := ZTE
+	DEVICE_MODEL := E8820V2
+	DEVICE_VARIANT := 16M
+	DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 wpad-basic luci
+endef
+TARGET_DEVICES += zte_e8820v2
